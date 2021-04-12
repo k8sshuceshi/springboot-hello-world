@@ -25,3 +25,11 @@ dependencies {
 test {
 	useJUnitPlatform()
 }
+
+task hello {
+  println 'Hello'
+}
+task world {
+  println 'World'
+}
+world.dependsOn hello
