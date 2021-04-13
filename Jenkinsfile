@@ -19,10 +19,6 @@ pipeline {
                     publishers: [
                         sshPublisherDesc(
                             configName: 'staging',
-                            sshCredentials: [
-                                username: '$USERNAME',
-                                encryptedPassphrase: '$USERPASS'
-                            ], 
                             transfers: [
                                 sshTransfer(
                                     sourceFiles: 'build/libs/spring-boot-0.0.1-SNAPSHOT.jar',
@@ -49,10 +45,6 @@ pipeline {
                     publishers: [
                         sshPublisherDesc(
                             configName: 'production',
-                            sshCredentials: [
-                                username: '$USERNAME',
-                                encryptedPassphrase: '$USERPASS'
-                            ], 
                             transfers: [
                                 sshTransfer(
                                     sourceFiles: 'build/libs/spring-boot-0.0.1-SNAPSHOT.jar',
