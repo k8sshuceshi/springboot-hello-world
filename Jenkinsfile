@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo '运行构建自动化'
+                echo '运行构建自动化a'
                 sh './gradlew build --no-daemon'
                 archiveArtifacts artifacts: 'build/libs/spring-boot-0.0.1-SNAPSHOT.jar'
             }
