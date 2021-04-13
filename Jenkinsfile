@@ -13,7 +13,7 @@ pipeline {
                 branch 'master'
             }
             steps {
-                withCredentials([usernamePassword(credentialsId: 'webserver_login', usernameVariable: 'USERNAME', passwordVariable: 'USERPASS')]) {
+                withCredentials([usernamePassword(credentialsId: 'webserver_login', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                     sshPublisher(
                         failOnError: true,
                         continueOnError: false,
@@ -21,8 +21,8 @@ pipeline {
                             sshPublisherDesc(
                                 configName: 'staging',
                                 sshCredentials: [
-                                    username: "\$USERNAME",
-                                    encryptedPassphrase: "\$USERPASS"
+                                    username: '$USERNAME',
+                                    encryptedPassphrase: '$PASSWORD'
                                 ], 
                                 transfers: [
                                     sshTransfer(
@@ -45,7 +45,7 @@ pipeline {
             steps {
                 input 'Staging 环境的部署是否一切正常？'
                 milestone(1)
-                withCredentials([usernamePassword(credentialsId: 'webserver_login', usernameVariable: 'USERNAME', passwordVariable: 'USERPASS')]) {
+                withCredentials([usernamePassword(credentialsId: 'webserver_login', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                     sshPublisher(
                         failOnError: true,
                         continueOnError: false,
@@ -53,8 +53,8 @@ pipeline {
                             sshPublisherDesc(
                                 configName: 'production',
                                 sshCredentials: [
-                                    username: "\$USERNAME",
-                                    encryptedPassphrase: "\$USERPASS"
+                                    username: '$USERNAME',
+                                    encryptedPassphrase: '$PASSWORD'
                                 ], 
                                 transfers: [
                                     sshTransfer(
