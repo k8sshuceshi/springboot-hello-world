@@ -24,7 +24,7 @@ pipeline {
                                     sourceFiles: 'build/libs/spring-boot-0.0.1-SNAPSHOT.jar',
                                     removePrefix: 'build/libs/',
                                     remoteDirectory: '/tmp',
-                                    execCommand: 'sudo /usr/bin/systemctl stop SpringBootHelloWorld && rm -rf /opt/springboot/spring-boot-0.0.1-SNAPSHOT.jar && cp /tmp/spring-boot-0.0.1-SNAPSHOT.jar /opt/springboot && sudo /usr/bin/systemctl start SpringBootHelloWorld'
+                                    execCommand: 'sudo /usr/bin/systemctl stop SpringBootHelloWorld && sudo rm -rf /opt/springboot/spring-boot-0.0.1-SNAPSHOT.jar && sudo cp /tmp/spring-boot-0.0.1-SNAPSHOT.jar /opt/springboot && sudo /usr/bin/systemctl start SpringBootHelloWorld'
                                 )
                             ]
                         )
@@ -50,7 +50,7 @@ pipeline {
                                     sourceFiles: 'build/libs/spring-boot-0.0.1-SNAPSHOT.jar',
                                     removePrefix: 'build/libs/',
                                     remoteDirectory: '/tmp',
-                                    execCommand: 'sudo /usr/bin/systemctl stop SpringBootHelloWorld && rm -rf /opt/springboot/spring-boot-0.0.1-SNAPSHOT.jar && cp /tmp/spring-boot-0.0.1-SNAPSHOT.jar /opt/springboot && sudo /usr/bin/systemctl start SpringBootHelloWorld'
+                                    execCommand: 'sudo /usr/bin/systemctl stop SpringBootHelloWorld && sudo rm -rf /opt/springboot/spring-boot-0.0.1-SNAPSHOT.jar && sudo cp /tmp/spring-boot-0.0.1-SNAPSHOT.jar /opt/springboot && sudo /usr/bin/systemctl start SpringBootHelloWorld'
                                 )
                             ]
                         )
