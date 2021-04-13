@@ -13,7 +13,7 @@ pipeline {
                 branch 'master'
             }
             steps {
-                withCredentials([usernamePassword(credentialsId: 'webserver_login', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                withCredentials([string(credentialsId: 'webserver_login', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                     sshPublisher(
                         failOnError: true,
                         continueOnError: false,
@@ -45,7 +45,7 @@ pipeline {
             steps {
                 input 'Staging 环境的部署是否一切正常？'
                 milestone(1)
-                withCredentials([usernamePassword(credentialsId: 'webserver_login', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                withCredentials([string(credentialsId: 'webserver_login', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                     sshPublisher(
                         failOnError: true,
                         continueOnError: false,
